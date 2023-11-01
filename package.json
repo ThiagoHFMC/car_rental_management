@@ -1,0 +1,21 @@
+{
+  "name": "car_rental_management",
+  "version": "1.0.0",
+  "description": "This project was developed for the selection process at RentCars. It's an implementation of a CRUD application for managing a car rental company. The application is a full web application with a front-end, back-end, and database. The front-end web page consumes the endpoints of the back-end API and performs operations in the database. It can handle any of the basic CRUD operations: Create, Read, Update, and Delete.",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Thiago Frois",
+  "license": "GLP",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.6.2",
+    "sequelize": "^6.33.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
