@@ -1,7 +1,7 @@
 const Car = require('../models/Car.js')
 const asyncWrapper = require('../middleware/async.js')
 
-const getCar = asyncWrapper(async (req, res) => {
+const getCars = asyncWrapper(async (req, res) => {
     const cars = await Car.findAll()
     res.status(200).json({ cars })
 })
@@ -9,7 +9,7 @@ const getCar = asyncWrapper(async (req, res) => {
 const getSingleCar = asyncWrapper(async (req, res, next) => {
     const car = await Car.findOne({where : { id:req.params.id }})
     if (!car) {
-        return next(Error("No task was found to be shown"))
+        return next(Error("No car was found to be shown"))
     }
 
     res.status(200).json({ car })
@@ -17,14 +17,19 @@ const getSingleCar = asyncWrapper(async (req, res, next) => {
 
 const createSingleCar = asyncWrapper(async (req, res) => {
     const car = await Car.build(req.body).save()
+
+    console.log("Chegou alguma coisa")
+    console.log("Requision Server Side: ", req.body)
+
     res.status(201).json({ car })
 })
 
 const updateSingleCar = asyncWrapper(async (req, res, next) => {
     const car = await Car.findOne({where : { id:req.params.id }})
-
+    console.log("Vamos atualizar...")
+    console.log(req.body)
     if (!car) {
-        return next(Error("No task was found to be updated"))
+        return next(Error("No car was found to be updated"))
     }
 
     car.update(req.body)
@@ -35,14 +40,14 @@ const deleteSingleCar = asyncWrapper(async (req, res, next) => {
     const car = await Car.destroy({where : { id:req.params.id }})
 
     if (!car) {
-        return next(new Error("No task was found to be deleted"))
+        return next(new Error("No car was found to be deleted"))
     }
 
     res.status(200).json({ car })
 })
 
 module.exports = {
-    getCar,
+    getCars,
     getSingleCar,
     createSingleCar,
     updateSingleCar,

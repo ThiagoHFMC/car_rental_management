@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locadora de Carros</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>CRUD de Veículos</h1>
+    <h2>Adicionar Novo Veículo</h2>
+
+    <form class="form-container" id="form_crud">
+        <label for="id">Id</label>
+        <input type="text" id="id" value="">
+        <div class="form-column">
+            <div class="form-group">
+                <label for="locadora">Locadora</label>
+                <input type="text" id="locadora" value="">
+            </div>
+
+            <div class="form-group">
+                <label for="modelo">Modelo</label>
+                <input type="text" id="modelo" value="">
+            </div>
+
+            <div class="form-group">
+                <label for="marca">Marca</label>
+                <input type="text" id="marca" value="">
+            </div>
+
+            <div class="form-group">
+                <label for="ano">Ano</label>
+                <input type="text" id="ano" value="">
+            </div>
+        </div>
+
+        <div class="form-column">
+            <div class="form-group">
+                <label for="motor">Motor</label>
+                <input type="text" id="motor" value="">
+            </div>
+
+            <div class="form-group">
+                <label for="portas">Portas</label>
+                <input type="text" id="portas" value="">
+            </div>
+
+            <div class="form-group">
+                <label for="cambio">Câmbio</label>
+                <input type="text" id="cambio" value="">
+            </div>
+
+            <div class="form-group">
+                <label for="ar_condicionado" class="check_label">Ar Condicionado</label>
+                <input type="checkbox" id="ar_condicionado" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" name="create" id="create"> Adicionar </button>
+            <button type="submit" name="update" id="update"> Atualizar </button>
+            <button type="submit" name="delete" id="delete"> Remover </button>
+        </div>
+    </form>
+    <button name="update_list" onclick="getCars()">Atualizar Lista</button><br><br>
+    
+
+    <table>
+        <thead>
+          <tr></tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    
+
+
+    <script src="index.js"></script>
+
+
+
+</body>
+</html>

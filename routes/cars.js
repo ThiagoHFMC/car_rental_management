@@ -2,14 +2,14 @@ const express = require('express')
 const router = express.Router() 
 
 const {
-    getCar,
+    getCars,
     getSingleCar,
     createSingleCar,
     updateSingleCar,
     deleteSingleCar
 } = require('../controllers/cars.js')
 
-router.get('/', getCar)
+router.get('/', getCars)
 router.get('/:id', getSingleCar)
 router.post('/', createSingleCar)
 router.put('/:id', updateSingleCar)

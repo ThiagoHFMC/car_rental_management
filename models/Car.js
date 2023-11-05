@@ -27,6 +27,6 @@ const Car = connection.define('cars', {
     }
 })
 
-//connection.sync({force: true})
+connection.sync({force: false})
 
 module.exports = Car
